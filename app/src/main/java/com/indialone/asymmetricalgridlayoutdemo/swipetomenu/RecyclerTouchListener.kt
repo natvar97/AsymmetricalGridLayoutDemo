@@ -510,7 +510,8 @@ open class RecyclerTouchListener(
                  * options is displayed - close the options menu for the row which is displaying it
                  * (bgVisibleView and bgVisiblePosition is used for this purpose which registers which view and
                  * which position has it's options menu opened)
-                 */x = motionEvent.rawX.toInt()
+                 */
+                x = motionEvent.rawX.toInt()
                 y = motionEvent.rawY.toInt()
                 rView.getHitRect(rect)
                 if (swipeable && bgVisible && touchedPosition !== bgVisiblePosition) {
@@ -736,14 +737,9 @@ open class RecyclerTouchListener(
                     // if fg is being swiped left
                     if (deltaX < touchSlop && !bgVisible) {
                         val translateAmount = deltaX - mSwipingSlop
-                        //                        if ((Math.abs(translateAmount) > bgWidth ? -bgWidth : translateAmount) <= 0) {
-                        // swipe fg till width of bg. If swiped further, nothing happens (stalls at width of bg)
                         fgView!!.setTranslationX(if (Math.abs(translateAmount) > bgWidth) -bgWidth.toFloat() else translateAmount)
                         if (fgView!!.translationX > 0) fgView!!.translationX = 0f
-                        //                        }
-
-                        // fades all the fadeViews gradually to 0 alpha as dragged
-                        if (fadeViews != null) {
+                       if (fadeViews != null) {
                             for (viewID in fadeViews!!) {
                                 touchedView!!.findViewById<View>(viewID).alpha =
                                     1 - Math.abs(translateAmount) / bgWidth
@@ -754,7 +750,6 @@ open class RecyclerTouchListener(
                         if (bgVisible) {
                             val translateAmount = deltaX - mSwipingSlop - bgWidth
 
-                            // swipe fg till it reaches original position. If swiped further, nothing happens (stalls at 0)
                             fgView!!.setTranslationX(if (translateAmount > 0) 0f else translateAmount)
 
                             // fades all the fadeViews gradually to 0 alpha as dragged
@@ -767,8 +762,7 @@ open class RecyclerTouchListener(
                         } else {
                             val translateAmount = deltaX - mSwipingSlop - bgWidth
 
-                            // swipe fg till it reaches original position. If swiped further, nothing happens (stalls at 0)
-                            fgView!!.setTranslationX(if (translateAmount > 0) 0f else translateAmount)
+                           fgView!!.setTranslationX(if (translateAmount > 0) 0f else translateAmount)
 
                             // fades all the fadeViews gradually to 0 alpha as dragged
                             if (fadeViews != null) {
@@ -789,13 +783,6 @@ open class RecyclerTouchListener(
                         // swipe fg till width of bg. If swiped further, nothing happens (stalls at width of bg)
                         fgView!!.translationX = translateAmount / 5
                         if (fgView!!.translationX > 0) fgView!!.translationX = 0f
-
-                        // fades all the fadeViews gradually to 0 alpha as dragged
-//                        if (fadeViews != null) {
-//                            for (int viewID : fadeViews) {
-//                                touchedView.findViewById(viewID).setAlpha(1 - (Math.abs(translateAmount) / bgWidth));
-//                            }
-//                        }
                     }
                     return true
                 }
@@ -813,14 +800,6 @@ open class RecyclerTouchListener(
     private enum class Animation {
         OPEN, CLOSE
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////  Interfaces  /////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-
-    ///////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////  Interfaces  /////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
     interface OnRowClickListener {
         fun onRowClicked(position: Int)
         fun onIndependentViewClicked(independentViewID: Int, position: Int)
