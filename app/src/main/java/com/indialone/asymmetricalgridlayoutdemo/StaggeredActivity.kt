@@ -16,7 +16,7 @@ class StaggeredActivity : AppCompatActivity() {
         mBinding = ActivityStaggeredBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        val layoutManager = StaggeredGridLayoutManager(2 , LinearLayoutManager.HORIZONTAL)
+        val layoutManager = StaggeredGridLayoutManager(3 , LinearLayoutManager.HORIZONTAL)
 
         mBinding.rvStaggered.layoutManager = layoutManager
 
