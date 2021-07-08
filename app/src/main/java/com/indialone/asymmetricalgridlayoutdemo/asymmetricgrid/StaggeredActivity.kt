@@ -1,9 +1,11 @@
-package com.indialone.asymmetricalgridlayoutdemo
+package com.indialone.asymmetricalgridlayoutdemo.asymmetricgrid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.indialone.asymmetricalgridlayoutdemo.model.Actor
+import com.indialone.asymmetricalgridlayoutdemo.R
 import com.indialone.asymmetricalgridlayoutdemo.databinding.ActivityStaggeredBinding
 
 class StaggeredActivity : AppCompatActivity() {

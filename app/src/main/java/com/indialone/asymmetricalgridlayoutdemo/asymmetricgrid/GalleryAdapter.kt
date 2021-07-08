@@ -1,10 +1,10 @@
-package com.indialone.asymmetricalgridlayoutdemo
+package com.indialone.asymmetricalgridlayoutdemo.asymmetricgrid
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.indialone.asymmetricalgridlayoutdemo.model.Actor
 import com.indialone.asymmetricalgridlayoutdemo.databinding.GalleryItemLayoutBinding
 
 class GalleryAdapter(

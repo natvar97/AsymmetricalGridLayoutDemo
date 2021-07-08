@@ -1,4 +1,4 @@
-package com.indialone.asymmetricalgridlayoutdemo
+package com.indialone.asymmetricalgridlayoutdemo.model
 
 data class Actor(
     val name : String,
